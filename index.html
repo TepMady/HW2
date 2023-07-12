@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <form class="border border-light p-5" style="width: 600px; margin: auto;">
+
+        <p class="h4 mb-4 text-center">Register</p>
+    
+        <input type="text" id="txtFirstName" class="form-control mb-4" placeholder="Employee First Name">
+    
+        <input type="text" id="txtLastName" class="form-control mb-4" placeholder="Employee Last Name">
+    
+        <input type="text" id="txtFirstName" class="form-control mb-4" placeholder="Employee Email">
+
+        <input type="text" id="txtSalary" class="form-control mb-4" placeholder="Salary">            
+    
+        <button class="btn btn-info btn-block my-4" type="submit" id="btnAdd">Add</button>
+    
+    </form>
+    <!-- ------------------------------------------- -->
+    <div style="margin: auto; width: 70%;">
+        <table id="dt-cell-sellection" class="table" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th>Employee First Name
+                </th>
+                <th>Employee Last Name
+                </th>
+                <th >Employee Email
+                </th>
+                <th >Salary
+                </th>
+
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<Script>
+    $(document).ready(function(){
+       const txtFirstName =$('#txtFirstName');
+       const txtLastName =$('#txtLastName');
+       const txtEmail =$('#txtEmail');
+       const txtSalary =$('#txtSalary');
+       
+        $('#btnAdd').click((e) =>{
+            e.preventDefault();
+            var row = `
+               <tr>
+                    <td>${txtFirstName.val()}</td>
+                    <td>${txtLastName.val()}</td>
+                    <td>${txtEmail.val()}</td>
+                    <td>${txtSalary.val()}</td>
+                </tr>
+            `;
+            $('tbody').append(row);
+
+        })
+    });
+</Script>
+</html>
